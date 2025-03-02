@@ -6,6 +6,7 @@ BUCKET_NAME = "my-dash-appdata"  # ここに自分のS3バケット名を入れ�
 FILE_KEY = "data.tsv"  # ここにS3上のTSVファイル名を入れる
 
 def lambda_handler(event, context):
+    print("Lambda function started")
     try:
         # S3からTSVデータを取得
         response = s3.get_object(Bucket=BUCKET_NAME, Key=FILE_KEY)
